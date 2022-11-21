@@ -9,6 +9,9 @@ class inputTexts extends StatelessWidget{
 
 inputTexts({Key? key, required this.sTittle}): super(key:key);
 
+  String getText() {
+    return myController.text;
+  }
 
   @override
   Widget build(BuildContext context) {
