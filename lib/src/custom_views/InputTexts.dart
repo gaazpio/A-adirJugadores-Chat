@@ -4,15 +4,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class inputTexts extends StatelessWidget{
+  final String sTittle;
+  final TextEditingController myController;
+
+inputTexts({Key? key, required this.sTittle, required this.myController}): super(key:key);
+
+
   @override
   Widget build(BuildContext context) {
 
 
     // TODO: implement build
     return TextFormField(
+      controller: myController,
       maxLength: 20,
       decoration: InputDecoration(
-        labelText: "hola",
+        labelText: sTittle,
         labelStyle: TextStyle(
           color:Colors.black,
         ),
