@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "715790805647",
+    "project_id": "examengzp",
+    "storage_bucket": "examengzp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:715790805647:android:4548208f2723f31d5f5efa",
+        "android_client_info": {
+          "package_name": "com.example.examen_david_gazpio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "715790805647-a8e1k9cecr4s67fi1801u3uio669v29e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-f41PUuh6jiIap2KC7Kk9dMw6ZiXdU8k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "715790805647-a8e1k9cecr4s67fi1801u3uio669v29e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
