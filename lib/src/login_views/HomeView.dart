@@ -20,6 +20,19 @@ class HomeView extends StatelessWidget {
     ],
     backgroundColor: Colors.purple,
     ),
+      body:    OutlinedButton(
+        onPressed: () {
+          Navigator.of(context).popAndPushNamed("/login");
+        },
+        style: OutlinedButton.styleFrom(
+            backgroundColor: Color.fromRGBO(210, 210, 210, 20)),
+        child: Text
+          ("Ir al login",style:TextStyle(fontSize: 14,color: Color.fromRGBO(135, 10, 1, 20),)
+        ),
+      ),
+
+
+
     );
   }
 
