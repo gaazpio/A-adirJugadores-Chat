@@ -32,7 +32,7 @@ class Login extends StatelessWidget{
     return Scaffold(
      appBar: AppBar(
         leading: Icon(Icons.menu),
-        title: Text('Page title'),
+        title: Text('Login'),
         actions: [
           Icon(Icons.favorite),
           Padding(

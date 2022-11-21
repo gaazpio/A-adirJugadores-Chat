@@ -1,5 +1,6 @@
 import 'package:examen_david_gazpio/src/login_views/HomeView.dart';
 import 'package:examen_david_gazpio/src/login_views/LoginView.dart';
+import 'package:examen_david_gazpio/src/login_views/OnBoarding.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -11,10 +12,11 @@ class App extends StatelessWidget {
 
 
     return MaterialApp(
-      initialRoute:"/login",
+      initialRoute:"/onBoarding",
       routes:{
         "/login":(context) => Login(),
         "/home":(context)=>HomeView(),
+        "/onBoarding":(context)=>OnBoarding(),
       },
     );
 
