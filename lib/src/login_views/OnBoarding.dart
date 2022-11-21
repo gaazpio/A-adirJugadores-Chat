@@ -53,8 +53,8 @@ class _OnBoardingView extends State<OnBoarding> {
   @override
   Widget build(BuildContext context) {
 
-    inputTexts iNombre=inputTexts(sTittle: "Nombre");
-    inputTexts iEdad= inputTexts(sTittle: "Edad");
+    inputTexts2 iNombre=inputTexts2(sTittle: "Nombre");
+    inputTexts2 iEdad= inputTexts2(sTittle: "Edad");
 
     // TODO: implement build
     return Scaffold(
