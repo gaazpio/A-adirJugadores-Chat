@@ -27,7 +27,19 @@ class _SplasState extends State<Splash>{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    throw UnimplementedError();
+    return Scaffold(
+      body: Center(
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children:[
+              Padding(padding: EdgeInsets.fromLTRB(30, 55, 0, 10),
+                  child:Image(image: AssetImage("/assets/logo.png"),)),
+            ]
+
+
+        ),
+      ),
+    );
   }
 
 
