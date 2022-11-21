@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 
 class inputTexts extends StatelessWidget{
   final String sTittle;
-  final TextEditingController myController;
+  final TextEditingController myController= TextEditingController(text: "");
 
-inputTexts({Key? key, required this.sTittle, required this.myController}): super(key:key);
+inputTexts({Key? key, required this.sTittle}): super(key:key);
 
 
   @override

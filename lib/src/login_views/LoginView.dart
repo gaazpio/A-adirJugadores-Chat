@@ -2,11 +2,18 @@
 
 import 'package:flutter/material.dart';
 
+import '../custom_views/InputTexts.dart';
+
 class Login extends StatelessWidget{
   Login({Key? key}) : super(key: key);
+
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    inputTexts iUsuario=inputTexts(sTittle: "Usuario");
+    inputTexts iPassword= inputTexts(sTittle: "Contraseña");
+
 
     return Scaffold(
      appBar: AppBar(
@@ -22,8 +29,22 @@ class Login extends StatelessWidget{
         ],
         backgroundColor: Colors.purple,
       ),
-    );
 
+      body: SingleChildScrollView(
+          child: Container(
+          child: Column(
+    mainAxisAlignment: MainAxisAlignment.start,
+    children: [
+    iUsuario,
+    iPassword,
+    ],
+    ),
+
+      ),
+
+
+    ),
+    );
   }
 
 
