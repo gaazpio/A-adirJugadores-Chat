@@ -1,4 +1,6 @@
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget{
@@ -17,9 +19,40 @@ class _SplasState extends State<Splash>{
   void initState() {
     // TODO: implement initState
     super.initState();
+    moveUser();
   }
 
 
+
+
+  void moveUser()async{
+    await Future.delayed(Duration(seconds:3));
+
+    if(FirebaseAuth.instance.currentUser==null){
+      Navigator.of(context).popAndPushNamed("/login");
+    }
+    else{
+      bool existe=await checkExistingProfile();
+      if(existe){
+        setState(() {
+          Navigator.of(context).popAndPushNamed("/home");
+        });
+      }
+      else{
+        Navigator.of(context).popAndPushNamed("/onBoarding");
+      }
+    }
+  }
+
+  Future<bool> checkExistingProfile() async{
+    String? idUser=FirebaseAuth.instance.currentUser?.uid;
+    FirebaseFirestore db = FirebaseFirestore.instance;
+    final docRef = db.collection("perfiles").doc(idUser);
+
+    DocumentSnapshot docsnap= await docRef.get();
+
+    return docsnap.exists;
+  }
 
 
 
@@ -32,11 +65,8 @@ class _SplasState extends State<Splash>{
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children:[
-              Padding(padding: EdgeInsets.fromLTRB(30, 55, 0, 10),
-                  child:Image(image: AssetImage("/assets/logo.png"),)),
-            ]
-
-
+              Image(image: AssetImage("assets/logo.png"),),
+            ],
         ),
       ),
     );

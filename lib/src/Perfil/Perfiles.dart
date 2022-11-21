@@ -11,8 +11,7 @@ class Perfil{
   });
 
   factory Perfil.fromFirestore(
-      DocumentSnapshot<Map<String, dynamic>> snapshot,
-      SnapshotOptions? options,
+      DocumentSnapshot<Map<String, dynamic>> snapshot, SnapshotOptions? options,
       ) {
     final data = snapshot.data();
     return Perfil(
