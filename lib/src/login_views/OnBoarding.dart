@@ -20,8 +20,18 @@ class _OnBoardingView extends State<OnBoarding> {
   @override
   void initState() {
     super.initState();
+    validarPerfil();
   }
+  void validarPerfil() async {
 
+    final docRef = db.collection("perfiles").doc((FirebaseAuth.instance.currentUser?.uid));
+    DocumentSnapshot docsnap=  await docRef.get();
+    if(docsnap.exists){
+
+      Navigator.of(context).popAndPushNamed("/home");
+    }
+
+  }
 
 
   void registarOnboarding(String nombre, int edad, BuildContext context) async{
