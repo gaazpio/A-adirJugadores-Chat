@@ -1,3 +1,4 @@
+import 'package:examen_david_gazpio/src/login_views/LoginView.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -6,7 +7,15 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    throw UnimplementedError();
+
+
+    return MaterialApp(
+      initialRoute:"/login",
+      routes:{
+        "/login":(context) => Login(),
+      },
+    );
+
   }
 
 
