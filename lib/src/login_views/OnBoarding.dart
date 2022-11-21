@@ -1,5 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../Perfil/Perfiles.dart';
 import '../custom_views/InputTexts.dart';
 
 class OnBoarding extends StatefulWidget {
@@ -13,15 +16,36 @@ class OnBoarding extends StatefulWidget {
 }
 
 class _OnBoardingView extends State<OnBoarding> {
+  FirebaseFirestore db = FirebaseFirestore.instance;
   @override
   void initState() {
     super.initState();
   }
+
+
+
+  void registarOnboarding(String nombre, int edad, BuildContext context) async{
+    Perfil perfil =
+    Perfil(nombre: nombre,edad: edad);
+
+
+    await db
+        .collection("perfiles")
+        .doc((FirebaseAuth.instance.currentUser?.uid))
+        .set(perfil.toFirestore())
+        .onError((e, _) => print("Error writing document: $e"));
+
+    Navigator.of(context).popAndPushNamed("/home");
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
 
     inputTexts iNombre=inputTexts(sTittle: "Nombre");
     inputTexts iEdad= inputTexts(sTittle: "Edad");
+
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
@@ -45,6 +69,7 @@ class _OnBoardingView extends State<OnBoarding> {
               iNombre,
 
               iEdad,
+
 
             ],
           ),
