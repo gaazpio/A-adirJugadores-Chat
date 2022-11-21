@@ -1,0 +1,37 @@
+
+import 'package:flutter/material.dart';
+
+class Splash extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return _SplasState();
+  }
+
+
+}
+
+class _SplasState extends State<Splash>{
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+
+
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+
+
+
+
+
+}
