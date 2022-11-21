@@ -26,8 +26,8 @@ inputTexts({Key? key, required this.sTittle}): super(key:key);
         labelStyle: TextStyle(
           color:Colors.black,
         ),
-        suffixIcon: Icon(
-          Icons.access_time,color: Color.fromRGBO(230, 230, 230,20),
+        prefixIcon:(Padding(padding: EdgeInsets.fromLTRB(20, 0, 10, 0),
+        child: Image(image: AssetImage("assets/reloj.png"),width: 5,))
         ),
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(color:Colors.black),
