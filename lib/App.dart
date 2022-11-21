@@ -12,7 +12,7 @@ class App extends StatelessWidget {
 
 
     return MaterialApp(
-      initialRoute:"/onBoarding",
+      initialRoute:"/login",
       routes:{
         "/login":(context) => Login(),
         "/home":(context)=>HomeView(),

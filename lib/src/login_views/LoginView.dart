@@ -11,7 +11,7 @@ class Login extends StatelessWidget{
     try {
       final credential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: emailAddress, password: password );
-      Navigator.of(context).popAndPushNamed("/home");
+      Navigator.of(context).popAndPushNamed("/onBoarding");
       print("LOGEADO CON EXITO");
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {

@@ -69,7 +69,17 @@ class _OnBoardingView extends State<OnBoarding> {
               iNombre,
 
               iEdad,
-
+              OutlinedButton(
+                onPressed: () {
+                  registarOnboarding(iNombre.getText(),int.parse(iEdad.getText()),context);
+                     print("NOMBRE "+iNombre.getText()+" EDAD "+iEdad.getText());
+                },
+                style: OutlinedButton.styleFrom(
+                    backgroundColor: Color.fromRGBO(210, 210, 210, 20)),
+                child: Text
+                  ("Sign In",style:TextStyle(fontSize: 14,color: Color.fromRGBO(135, 10, 1, 20),)
+                ),
+              ),
 
             ],
           ),
