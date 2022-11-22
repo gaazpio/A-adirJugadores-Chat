@@ -1,32 +1,45 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:examen_david_gazpio/src/Perfil/Lista.dart';
 import 'package:examen_david_gazpio/src/custom_views/ListItem.dart';
 import 'package:flutter/material.dart';
 
 import '../custom_views/Button.dart';
 
-class HomeView extends StatelessWidget {
-  HomeView({Key? key}) : super(key: key);
+class HomeView extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _HomeState();
+  }
+}
+class _HomeState extends State<HomeView> {
+
   FirebaseFirestore db = FirebaseFirestore.instance;
-  String nombre = " ";
-  List<ListItem> listRooms = [];
+  List<Lista> listRooms = [];
+
+  @override
+  void initState(){
+    super.initState();
+    pasarlistas();
+  }
 
   void onClickgo(int index){
     print ("has clicado");
   }
-  void pasarlistas () async{
-    final docRef = db.collection("listas").withConverter(fromFirestore:listas.fromFirestore,
-        toFirestore: (Room room, _) => room.toFirestore());
+
+  void pasarlistas() async{
+    final docRef = db.collection("listas").withConverter(fromFirestore:Lista.fromFirestore,
+        toFirestore: (Lista list, _) => list.toFirestore());
 
     final docSnap= await docRef.get();
 
     setState(() {
       for(int i=0;i<docSnap.docs.length;i++){
-        chatRooms.add(docSnap.docs[i].data());
+        listRooms.add(docSnap.docs[i].data());
       }
 
     });
-  }
 
+  }
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
