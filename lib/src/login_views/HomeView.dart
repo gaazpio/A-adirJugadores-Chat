@@ -13,7 +13,19 @@ class HomeView extends StatelessWidget {
   void onClickgo(int index){
     print ("has clicado");
   }
+  void pasarlistas () async{
+    final docRef = db.collection("listas").withConverter(fromFirestore:listas.fromFirestore,
+        toFirestore: (Room room, _) => room.toFirestore());
 
+    final docSnap= await docRef.get();
+
+    setState(() {
+      for(int i=0;i<docSnap.docs.length;i++){
+        chatRooms.add(docSnap.docs[i].data());
+      }
+
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
