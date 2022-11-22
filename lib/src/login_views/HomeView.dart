@@ -1,9 +1,18 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:examen_david_gazpio/src/custom_views/ListItem.dart';
 import 'package:flutter/material.dart';
 
 import '../custom_views/Button.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({Key? key}) : super(key: key);
+  FirebaseFirestore db = FirebaseFirestore.instance;
+  String nombre = " ";
+  List<ListItem> listRooms = [];
+
+  void onClickgo(int index){
+    print ("has clicado");
+  }
 
 
   @override
@@ -23,20 +32,16 @@ class HomeView extends StatelessWidget {
     ],
     backgroundColor: Colors.purple,
     ),
-      body: Column(
-        children: [OutlinedButton(
-          onPressed: () {
-    Navigator.of(context).popAndPushNamed("/login");
-    },
-      style: OutlinedButton.styleFrom(
-          backgroundColor: Color.fromRGBO(210, 210, 210, 20)),
-      child: Text
-        ("Ir al login",style:TextStyle(fontSize: 14,color: Color.fromRGBO(135, 10, 1, 20),)
-      ),),
-
-
-          button1()],
-      ),
+      body: Center(
+        child: ListView.separated(
+          padding: const EdgeInsets.all(8),
+          itemCount: listRooms.length,
+          itemBuilder: (BuildContext context, int index) {
+            return ListItem(stittle:listRooms[index].toString(), whitClickGo:onClickgo, iIndex: index,);
+          },
+          separatorBuilder: (BuildContext context, int index) => const Divider(),
+        ),
+      )
 
 
 
