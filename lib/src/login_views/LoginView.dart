@@ -7,6 +7,7 @@ import '../custom_views/InputTexts.dart';
 class Login extends StatelessWidget{
   Login({Key? key}) : super(key: key);
 
+
   void logearse(String emailAddress, String password, BuildContext context) async {
     try {
       final credential = await FirebaseAuth.instance

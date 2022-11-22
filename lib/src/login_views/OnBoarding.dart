@@ -77,7 +77,6 @@ class _OnBoardingView extends State<OnBoarding> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               iNombre,
-
               iEdad,
               OutlinedButton(
                 onPressed: () {
