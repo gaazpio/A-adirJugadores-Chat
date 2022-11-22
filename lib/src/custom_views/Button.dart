@@ -5,9 +5,8 @@ class button1 extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
    return MaterialButton(
-     padding: EdgeInsets.all(8.0),
-     textColor: Colors.white,
-     splashColor: Colors.greenAccent,
+     padding: EdgeInsets.all(0.0),
+     splashColor: Colors.red,
      elevation: 8.0,
      child: Container(
        decoration: BoxDecoration(
@@ -16,7 +15,7 @@ class button1 extends StatelessWidget{
              fit: BoxFit.cover),
        ),
        child: Padding(
-         padding: const EdgeInsets.all(8.0),
+         padding: const EdgeInsets.all(10.0),
          child: Text("BOTON CON FONDO",style: TextStyle(color: Colors.black,),),
        ),
      ),
