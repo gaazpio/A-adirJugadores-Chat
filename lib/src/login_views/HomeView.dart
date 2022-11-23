@@ -29,6 +29,7 @@ class _HomeState extends State<HomeView> {
   void onClickgo(int index) {
     print("has clicado");
     print(listRooms[index].name);
+    Navigator.of(context).pushNamed("/insideList");
   }
 
   void pasarlistas() async {

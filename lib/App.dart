@@ -1,3 +1,4 @@
+import 'package:examen_david_gazpio/src/custom_views/InsideList.dart';
 import 'package:examen_david_gazpio/src/login_views/HomeView.dart';
 import 'package:examen_david_gazpio/src/login_views/LoginView.dart';
 import 'package:examen_david_gazpio/src/login_views/OnBoarding.dart';
@@ -20,7 +21,8 @@ class App extends StatelessWidget {
         "/login":(context) => Login(),
         "/home":(context)=>HomeView(),
         "/onBoarding":(context)=>OnBoarding(),
-        "/onBoardingListas":(context)=>OnBoardingListas()
+        "/onBoardingListas":(context)=>OnBoardingListas(),
+        "/insideList":(context)=>InsideList(),
       },
     );
 
