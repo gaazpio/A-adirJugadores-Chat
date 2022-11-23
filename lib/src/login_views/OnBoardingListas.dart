@@ -3,6 +3,7 @@ import 'package:examen_david_gazpio/src/Perfil/Lista.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+
 import '../Perfil/Perfiles.dart';
 import '../custom_views/InputTexts.dart';
 
@@ -26,7 +27,6 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
 
   void registarOnboardingList(String nombre, String id, BuildContext context) async{
     Lista lista = Lista(name: nombre, uid: id);
-
 
     await db
         .collection("listas")

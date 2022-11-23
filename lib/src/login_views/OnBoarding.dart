@@ -33,7 +33,7 @@ class _OnBoardingView extends State<OnBoarding> {
   }
 
 
-  void registarOnboarding(String nombre, int edad, BuildContext context) async{
+  void registarOnboarding(String  nombre, int edad, BuildContext context) async{
     Perfil perfil =
     Perfil(nombre: nombre,edad: edad);
 
