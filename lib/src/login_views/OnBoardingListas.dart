@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:examen_david_gazpio/src/Perfil/Lista.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -20,29 +21,17 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
   @override
   void initState() {
     super.initState();
-    validarPerfil();
-  }
-  void validarPerfil() async {
-
-    final docRef = db.collection("perfiles").doc((FirebaseAuth.instance.currentUser?.uid));
-    DocumentSnapshot docsnap=  await docRef.get();
-    if(docsnap.exists){
-
-      Navigator.of(context).popAndPushNamed("/home");
-    }
 
   }
 
-
-  void registarOnboarding(String nombre, int edad, BuildContext context) async{
-    Perfil perfil =
-    Perfil(nombre: nombre,edad: edad);
+  void registarOnboarding(String nombre, BuildContext context) async{
+    Lista lista = Lista(name: nombre,);
 
 
     await db
-        .collection("perfiles")
+        .collection("listas")
         .doc((FirebaseAuth.instance.currentUser?.uid))
-        .set(perfil.toFirestore())
+        .set(lista.toFirestore())
         .onError((e, _) => print("Error writing document: $e"));
 
     Navigator.of(context).popAndPushNamed("/home");
@@ -53,8 +42,7 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
   @override
   Widget build(BuildContext context) {
 
-    inputTexts2 iNombre=inputTexts2(sTittle: "Nombre");
-    inputTexts2 iEdad= inputTexts2(sTittle: "Edad");
+    inputTexts2 iNombre=inputTexts2(sTittle:"Nombre");
 
     // TODO: implement build
     return Scaffold(
@@ -77,16 +65,15 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               iNombre,
-              iEdad,
               OutlinedButton(
                 onPressed: () {
-                  registarOnboarding(iNombre.getText(),int.parse(iEdad.getText()),context);
-                  print("NOMBRE "+iNombre.getText()+" EDAD "+iEdad.getText());
+                  registarOnboarding(iNombre.getText(),context);
+                  print("NOMBRE "+iNombre.getText());
                 },
                 style: OutlinedButton.styleFrom(
                     backgroundColor: Color.fromRGBO(210, 210, 210, 20)),
                 child: Text
-                  ("Sign In",style:TextStyle(fontSize: 14,color: Color.fromRGBO(135, 10, 1, 20),)
+                  ("Añadir a la lista",style:TextStyle(fontSize: 14,color: Color.fromRGBO(135, 10, 1, 20),)
                 ),
               ),
 
