@@ -25,25 +25,21 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
 
   }
 
-  void registarOnboardingList(String nombre, String id, BuildContext context) async{
-    Lista lista = Lista(name: nombre, uid: id);
+  void registarOnboardingList(String nombre, BuildContext context) async{
+    Lista mb = new Lista(name: nombre,);
 
-    await db
-        .collection("listas")
-        .doc((id))
-        .set(lista.toFirestore())
-        .onError((e, _) => print("Error writing document: $e"));
+    final docRef = db.collection("listas");
+    await docRef.add(mb.toFirestore());
+
 
     Navigator.of(context).popAndPushNamed("/home");
   }
-
 
 
   @override
   Widget build(BuildContext context) {
 
     inputTexts2 iNombre=inputTexts2(sTittle:"Nombre");
-    inputTexts2 iId=inputTexts2(sTittle:"Id");
 
     // TODO: implement build
     return Scaffold(
@@ -66,10 +62,9 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               iNombre,
-              iId,
               OutlinedButton(
                 onPressed: () {
-                  registarOnboardingList(iNombre.getText(),iId.getText(),context);
+                  registarOnboardingList(iNombre.getText(),context);
                   print("NOMBRE "+iNombre.getText());
                 },
                 style: OutlinedButton.styleFrom(

@@ -8,6 +8,7 @@ import '../Perfil/Perfiles.dart';
 import '../custom_views/Button.dart';
 
 class HomeView extends StatefulWidget {
+
   @override
   State<StatefulWidget> createState() {
     return _HomeState();

@@ -1,4 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import '../Perfil/Lista.dart';
 
 
 class InsideList extends StatefulWidget {
@@ -9,12 +11,14 @@ class InsideList extends StatefulWidget {
 }
 
 class _InsideList extends State<InsideList> {
+  List<Lista> listRooms = [];
+  Lista typeaList = Lista();
   @override
 
   void initState() {
     // TODO: implement initState
     super.initState();
-
+    print(typeaList.name);
   }
 
   @override
@@ -23,8 +27,8 @@ class _InsideList extends State<InsideList> {
     return Scaffold(
       appBar: AppBar(
         leading: Icon(Icons.filter_none),
-        title: Text("hola"),
-        backgroundColor: Color.fromRGBO(112, 0, 0, 20),
+        title: Text("InsideChat"),
+        backgroundColor: Colors.purple,
       ),
       body: SingleChildScrollView(
           child: Column(
@@ -35,7 +39,7 @@ class _InsideList extends State<InsideList> {
               Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 0), child:Row (
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Padding(padding: EdgeInsets.fromLTRB(0, 7, 0, 0), child: Text("HOLA")),
+                  Padding(padding: EdgeInsets.fromLTRB(0, 7, 0, 0), child: Text("hola")),
                 ],
               ),
               ),
