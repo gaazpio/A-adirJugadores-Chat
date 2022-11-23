@@ -13,28 +13,31 @@ class HomeView extends StatefulWidget {
     return _HomeState();
   }
 }
+
 class _HomeState extends State<HomeView> {
   FirebaseFirestore db = FirebaseFirestore.instance;
   List<Lista> listRooms = [];
-  Lista typeaList= Lista();
-  String name="--";
+  Lista typeaList = Lista();
+  String name = "--";
+
   @override
-  void initState(){
+  void initState() {
     super.initState();
     pasarlistas();
   }
 
-  void onClickgo(int index){
-    print ("has clicado");
+  void onClickgo(int index) {
+    print("has clicado");
     print(listRooms[index].name);
   }
 
-  void pasarlistas() async{
-    final docRef = db.collection("listas").withConverter(fromFirestore:Lista.fromFirestore,
+  void pasarlistas() async {
+    final docRef = db.collection("listas").withConverter(
+        fromFirestore: Lista.fromFirestore,
         toFirestore: (Lista list, _) => list.toFirestore());
-    final docSnap= await docRef.get();
+    final docSnap = await docRef.get();
     setState(() {
-      for(int i=0;i<docSnap.docs.length;i++){
+      for (int i = 0; i < docSnap.docs.length; i++) {
         listRooms.add(docSnap.docs[i].data());
       }
     });
@@ -44,41 +47,42 @@ class _HomeState extends State<HomeView> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-        appBar: AppBar(
+      appBar: AppBar(
         leading: Icon(Icons.menu),
-    title: Text('HomeView'),
-    actions: [
-    Icon(Icons.favorite),
-    Padding(
-    padding: EdgeInsets.symmetric(horizontal: 16),
-    child: Icon(Icons.search),
-    ),
-    Icon(Icons.more_vert),
-    ],
-    backgroundColor: Colors.purple,
-    ),
+        title: Text('HomeView'),
+        actions: [
+          Icon(Icons.favorite),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Icon(Icons.search),
+          ),
+          Icon(Icons.more_vert),
+        ],
+        backgroundColor: Colors.purple,
+      ),
       body: Container(
         child: ListView.separated(
-        padding: const EdgeInsets.all(8),
-        itemCount: listRooms.length,
-        itemBuilder: (BuildContext context, int index) {
-          return ListItem(stittle:listRooms[index].name!, whitClickGo:onClickgo, iIndex: index,);
-        },
-        separatorBuilder: (BuildContext context, int index) => const Divider(),
+          padding: const EdgeInsets.all(8),
+          itemCount: listRooms.length,
+          itemBuilder: (BuildContext context, int index) {
+            return ListItem(
+              stittle: listRooms[index].name!,
+              whitClickGo: onClickgo,
+              iIndex: index,
+            );
+          },
+          separatorBuilder: (BuildContext context, int index) =>
+              const Divider(),
+        ),
       ),
-
-      ),floatingActionButton: FloatingActionButton.extended(
+      floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
-      // Add your onPressed code here!
-    },
-    label: const Text('Añadir nueva lista'),
-    icon: const Icon(Icons.add),
-    backgroundColor: Colors.purple,
-
-    ),
+          Navigator.of(context).popAndPushNamed("/onBoardingListas");
+        },
+        label: const Text('Añadir nueva lista'),
+        icon: const Icon(Icons.add),
+        backgroundColor: Colors.purple,
+      ),
     );
-
   }
-
-
 }
