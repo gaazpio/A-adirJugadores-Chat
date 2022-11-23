@@ -24,13 +24,13 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
 
   }
 
-  void registarOnboarding(String nombre, BuildContext context) async{
-    Lista lista = Lista(name: nombre,);
+  void registarOnboardingList(String nombre, String id, BuildContext context) async{
+    Lista lista = Lista(name: nombre, uid: id);
 
 
     await db
         .collection("listas")
-        .doc((FirebaseAuth.instance.currentUser?.uid))
+        .doc((id))
         .set(lista.toFirestore())
         .onError((e, _) => print("Error writing document: $e"));
 
@@ -43,6 +43,7 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
   Widget build(BuildContext context) {
 
     inputTexts2 iNombre=inputTexts2(sTittle:"Nombre");
+    inputTexts2 iId=inputTexts2(sTittle:"Id");
 
     // TODO: implement build
     return Scaffold(
@@ -65,9 +66,10 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               iNombre,
+              iId,
               OutlinedButton(
                 onPressed: () {
-                  registarOnboarding(iNombre.getText(),context);
+                  registarOnboardingList(iNombre.getText(),iId.getText(),context);
                   print("NOMBRE "+iNombre.getText());
                 },
                 style: OutlinedButton.styleFrom(

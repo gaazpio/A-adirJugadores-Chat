@@ -25,6 +25,7 @@ class Lista{
   Map<String, dynamic> toFirestore() {
     return {
       if (name != null) "name": name,
+      if(uid!=null)"id":uid,
     };
   }
 }
