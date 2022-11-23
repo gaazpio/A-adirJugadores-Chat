@@ -57,20 +57,27 @@ class _HomeState extends State<HomeView> {
     ],
     backgroundColor: Colors.purple,
     ),
-      body: Center(
+      body: Container(
         child: ListView.separated(
-          padding: const EdgeInsets.all(8),
-          itemCount: listRooms.length,
-          itemBuilder: (BuildContext context, int index) {
-            return ListItem(stittle:listRooms[index].name!, whitClickGo:onClickgo, iIndex: index,);
-          },
-          separatorBuilder: (BuildContext context, int index) => const Divider(),
-        ),
-      )
+        padding: const EdgeInsets.all(8),
+        itemCount: listRooms.length,
+        itemBuilder: (BuildContext context, int index) {
+          return ListItem(stittle:listRooms[index].name!, whitClickGo:onClickgo, iIndex: index,);
+        },
+        separatorBuilder: (BuildContext context, int index) => const Divider(),
+      ),
 
+      ),floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+      // Add your onPressed code here!
+    },
+    label: const Text('Añadir nueva lista'),
+    icon: const Icon(Icons.add),
+    backgroundColor: Colors.purple,
 
-
+    ),
     );
+
   }
 
 
