@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:examen_david_gazpio/src/Perfil/Lista.dart';
 import 'package:examen_david_gazpio/src/custom_views/ListItem.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../Perfil/Perfiles.dart';
 import '../custom_views/Button.dart';
 
 class HomeView extends StatefulWidget {
@@ -12,10 +14,10 @@ class HomeView extends StatefulWidget {
   }
 }
 class _HomeState extends State<HomeView> {
-
   FirebaseFirestore db = FirebaseFirestore.instance;
   List<Lista> listRooms = [];
-
+  Lista typeaList= Lista();
+  String name="--";
   @override
   void initState(){
     super.initState();
@@ -24,22 +26,20 @@ class _HomeState extends State<HomeView> {
 
   void onClickgo(int index){
     print ("has clicado");
+    print(listRooms[index].name);
   }
 
   void pasarlistas() async{
     final docRef = db.collection("listas").withConverter(fromFirestore:Lista.fromFirestore,
         toFirestore: (Lista list, _) => list.toFirestore());
-
     final docSnap= await docRef.get();
-
     setState(() {
       for(int i=0;i<docSnap.docs.length;i++){
         listRooms.add(docSnap.docs[i].data());
       }
-
     });
-
   }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -62,7 +62,7 @@ class _HomeState extends State<HomeView> {
           padding: const EdgeInsets.all(8),
           itemCount: listRooms.length,
           itemBuilder: (BuildContext context, int index) {
-            return ListItem(stittle:listRooms[index].toString(), whitClickGo:onClickgo, iIndex: index,);
+            return ListItem(stittle:listRooms[index].name!, whitClickGo:onClickgo, iIndex: index,);
           },
           separatorBuilder: (BuildContext context, int index) => const Divider(),
         ),
