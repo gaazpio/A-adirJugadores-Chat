@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:examen_david_gazpio/src/DataHolder/DataHolder.dart';
 import 'package:examen_david_gazpio/src/login_views/HomeView.dart';
 import 'package:flutter/material.dart';
 import '../Perfil/Lista.dart';
@@ -20,7 +21,7 @@ class _InsideList extends State<InsideList> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    print(typeaList.name!);
+    print(DataHolder().whatList.name!);
   }
 
 
@@ -32,14 +33,14 @@ class _InsideList extends State<InsideList> {
     return Scaffold(
       appBar: AppBar(
         leading: Icon(Icons.filter_none),
-        title: Text("InsideChat"),
+        title: Text(DataHolder().whatList.name!),
         backgroundColor: Colors.purple,
       ),
       body: SingleChildScrollView(
           child: Column(
             children: [
               Container(
-                child: Text(typeaList.name!,style: TextStyle(color: Colors.white,fontSize: 20)),
+                child: Text(DataHolder().whatList.name!,style: TextStyle(color: Colors.blue,fontSize: 20)),
                 width: 360,
               ),
               Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 0), child:Row (

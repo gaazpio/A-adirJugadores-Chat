@@ -7,7 +7,6 @@ class ListItem extends StatelessWidget{
 const ListItem({Key? key , required this.stittle, required this.whitClickGo, required this.iIndex,}) : super(key: key);
   @override
 
-
   Widget build(BuildContext context) {
     // TODO: implement build
     return ListTile(

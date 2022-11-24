@@ -4,6 +4,7 @@ import 'package:examen_david_gazpio/src/custom_views/ListItem.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../DataHolder/DataHolder.dart';
 import '../Perfil/Perfiles.dart';
 import '../custom_views/Button.dart';
 
@@ -31,6 +32,7 @@ class _HomeState extends State<HomeView> {
     print("has clicado");
     print(listRooms[index].name);
     Navigator.of(context).pushNamed("/insideList");
+    DataHolder().whatList=listRooms[index];
   }
 
   void pasarlistas() async {
