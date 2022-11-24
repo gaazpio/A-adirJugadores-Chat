@@ -53,7 +53,7 @@ class _HomeState extends State<HomeView> {
     return Scaffold(
       appBar: AppBar(
         leading: Icon(Icons.menu),
-        title: Text('HomeView'),
+        title: Text('Equipos del mundial'),
         actions: [
           Icon(Icons.favorite),
           Padding(
@@ -76,14 +76,14 @@ class _HomeState extends State<HomeView> {
             );
           },
           separatorBuilder: (BuildContext context, int index) =>
-              const Divider(),
+          const Divider(),
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           Navigator.of(context).popAndPushNamed("/onBoardingListas");
         },
-        label: const Text('Añadir nueva lista'),
+        label: const Text('Añadir nueva equipo'),
         icon: const Icon(Icons.add),
         backgroundColor: Colors.purple,
       ),

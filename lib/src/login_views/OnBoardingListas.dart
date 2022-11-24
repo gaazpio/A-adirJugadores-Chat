@@ -2,9 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:examen_david_gazpio/src/Perfil/Lista.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-
-import '../Perfil/Perfiles.dart';
 import '../custom_views/InputTexts.dart';
 
 class OnBoardingListas extends StatefulWidget {
@@ -25,13 +22,11 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
 
   }
 
-  void registarOnboardingList(String nombre, BuildContext context) async{
-    Lista mb = new Lista(name: nombre,);
+  void registarOnboardingList(String nombre,String mvp,int posi, BuildContext context) async{
+    Lista mb = new Lista(name: nombre,mvp: mvp,posicion: posi);
 
     final docRef = db.collection("listas");
     await docRef.add(mb.toFirestore());
-
-
     Navigator.of(context).popAndPushNamed("/home");
   }
 
@@ -40,6 +35,8 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
   Widget build(BuildContext context) {
 
     inputTexts2 iNombre=inputTexts2(sTittle:"Nombre");
+    inputTexts2 iMvp=inputTexts2(sTittle:"Mejor jugador");
+    inputTexts2 iPosicion=inputTexts2(sTittle:"Posicion que va a quedar en el mundial");
 
     // TODO: implement build
     return Scaffold(
@@ -62,10 +59,12 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               iNombre,
+              iMvp,
+              iPosicion,
               OutlinedButton(
                 onPressed: () {
-                  registarOnboardingList(iNombre.getText(),context);
-                  print("NOMBRE "+iNombre.getText());
+                  registarOnboardingList(iNombre.getText(),iMvp.getText(), int.parse(iPosicion.getText()),context);
+                  print("NOMBRE "+iNombre.getText()+"MVP "+iMvp.getText()+""+iPosicion.getText());
                 },
                 style: OutlinedButton.styleFrom(
                     backgroundColor: Color.fromRGBO(210, 210, 210, 20)),
