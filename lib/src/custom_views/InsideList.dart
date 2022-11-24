@@ -46,7 +46,7 @@ class _InsideList extends State<InsideList> {
                 child: Container(
                   width: 360,
                   height: 50,
-                  child: Text("SELECCION SELECIONADA : \n"+ DataHolder().whatList.name!,style: TextStyle(color: Colors.white,fontSize: 20)),
+                  child: Text("NOMBRE DEL JUGADOR : \n"+ DataHolder().whatList.name!,style: TextStyle(color: Colors.white,fontSize: 20)),
                   color: Colors.black,
                 ),
               ),
@@ -56,7 +56,7 @@ class _InsideList extends State<InsideList> {
                 child: Container(
                   width: 360,
                   height: 50,
-                  child: Text("MEJOR JUGADOR :\n"+DataHolder().whatList.mvp!,style: TextStyle(color: Colors.white,fontSize: 20)),
+                  child: Text("EDAD :\n"+DataHolder().whatList.mvp!,style: TextStyle(color: Colors.white,fontSize: 20)),
 
                   color: Colors.black,
                 ),
@@ -67,7 +67,7 @@ class _InsideList extends State<InsideList> {
                 child: Container(
                   width: 360,
                   height: 50,
-                  child: Text("POSICION EN EL MUNDIAL :\n"+DataHolder().whatList.posicion!,style: TextStyle(color: Colors.white,fontSize: 20)),
+                  child: Text("POSICION:\n"+DataHolder().whatList.posicion!,style: TextStyle(color: Colors.white,fontSize: 20)),
                   color: Colors.black,
                 ),
               ),

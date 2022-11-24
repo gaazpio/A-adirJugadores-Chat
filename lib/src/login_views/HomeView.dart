@@ -53,7 +53,7 @@ class _HomeState extends State<HomeView> {
     return Scaffold(
       appBar: AppBar(
         leading: Icon(Icons.map),
-        title: Text('Equipos del mundial'),
+        title: Text('Seleccion Española'),
         actions: [
           Icon(Icons.map),
           Padding(
@@ -95,7 +95,7 @@ class _HomeState extends State<HomeView> {
         onPressed: () {
           Navigator.of(context).popAndPushNamed("/onBoardingListas");
         },
-        label: const Text('Añadir nuevo equipo'),
+        label: const Text('Añadir nuevo jugador'),
         icon: const Icon(Icons.flag_circle),
         backgroundColor: Color.fromRGBO(112, 0, 0, 20),
       ),
