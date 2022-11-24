@@ -52,15 +52,13 @@ class _HomeState extends State<HomeView> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.menu),
+        leading: Icon(Icons.map),
         title: Text('Equipos del mundial'),
         actions: [
-          Icon(Icons.favorite),
+          Icon(Icons.map),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Icon(Icons.search),
+            padding: EdgeInsets.symmetric(horizontal: 10),
           ),
-          Icon(Icons.more_vert),
         ],
         backgroundColor: Color.fromRGBO(112, 0, 0, 20),
 
@@ -97,8 +95,8 @@ class _HomeState extends State<HomeView> {
         onPressed: () {
           Navigator.of(context).popAndPushNamed("/onBoardingListas");
         },
-        label: const Text('Añadir nueva equipo'),
-        icon: const Icon(Icons.add),
+        label: const Text('Añadir nuevo equipo'),
+        icon: const Icon(Icons.flag_circle),
         backgroundColor: Color.fromRGBO(112, 0, 0, 20),
       ),
       backgroundColor: Colors.yellow,

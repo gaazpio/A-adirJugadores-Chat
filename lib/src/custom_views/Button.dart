@@ -11,12 +11,12 @@ class button1 extends StatelessWidget{
      child: Container(
        decoration: BoxDecoration(
          image: DecorationImage(
-             image: AssetImage('assets/logo.png'),
+             image: AssetImage('assets/spain.png'),
              fit: BoxFit.cover),
        ),
        child: Padding(
          padding: const EdgeInsets.all(10.0),
-         child: Text("BOTON CON FONDO",style: TextStyle(color: Colors.black,),),
+         child: Text("PINCHA SI QUIERES QUE GANE ESPAÑA EL MUNDIAL",style: TextStyle(color: Colors.black,),),
        ),
      ),
      // ),

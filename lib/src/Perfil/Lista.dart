@@ -4,14 +4,14 @@ class Lista{
   final String? uid;
   final String? name;
   final String? mvp;
-  final int posicion;
+  final String? posicion;
 
 
   Lista({
     this.name="",
     this.mvp="",
     this.uid="",
-    this.posicion=0,
+    this.posicion="",
 
   });
 
@@ -33,7 +33,7 @@ class Lista{
     return {
       if (name != null) "name": name,
       if (mvp != null) "mvp": mvp,
-      if (posicion != 0) "posicion": posicion,
+      if (posicion != null) "posicion": posicion,
 
 
     };

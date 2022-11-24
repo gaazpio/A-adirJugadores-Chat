@@ -3,6 +3,7 @@ import 'package:examen_david_gazpio/src/DataHolder/DataHolder.dart';
 import 'package:examen_david_gazpio/src/login_views/HomeView.dart';
 import 'package:flutter/material.dart';
 import '../Perfil/Lista.dart';
+import 'Button.dart';
 
 
 class InsideList extends StatefulWidget {
@@ -34,19 +35,50 @@ class _InsideList extends State<InsideList> {
       appBar: AppBar(
         leading: Icon(Icons.filter_none),
         title: Text(DataHolder().whatList.name!),
-        backgroundColor: Colors.purple,
+        backgroundColor: Color.fromRGBO(112, 0, 0, 20),
       ),
       body: SingleChildScrollView(
           child: Column(
             children: [
-              Container(
-                child: Text(DataHolder().whatList.name!,style: TextStyle(color: Colors.blue,fontSize: 20)),
-                width: 360,
+
+              Padding(
+                padding: EdgeInsets.fromLTRB(10, 30, 20, 5),
+                child: Container(
+                  width: 360,
+                  height: 50,
+                  child: Text("SELECCION SELECIONADA : \n"+ DataHolder().whatList.name!,style: TextStyle(color: Colors.white,fontSize: 20)),
+                  color: Colors.black,
+                ),
               ),
+
+              Padding(
+                padding: EdgeInsets.fromLTRB(10, 30, 20, 5),
+                child: Container(
+                  width: 360,
+                  height: 50,
+                  child: Text("MEJOR JUGADOR :\n"+DataHolder().whatList.mvp!,style: TextStyle(color: Colors.white,fontSize: 20)),
+
+                  color: Colors.black,
+                ),
+              ),
+
+              Padding(
+                padding: EdgeInsets.fromLTRB(10, 30, 20, 5),
+                child: Container(
+                  width: 360,
+                  height: 50,
+                  child: Text("POSICION EN EL MUNDIAL :\n"+DataHolder().whatList.posicion!,style: TextStyle(color: Colors.white,fontSize: 20)),
+                  color: Colors.black,
+                ),
+              ),
+
               Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 0), child:Row (
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Padding(padding: EdgeInsets.fromLTRB(0, 7, 0, 0), child: Text("")),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(0, 440, 0, 0),
+                    child:   button1(),
+                    ),
                 ],
               ),
               ),

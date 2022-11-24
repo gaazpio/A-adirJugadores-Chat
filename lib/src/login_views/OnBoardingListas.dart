@@ -22,7 +22,7 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
 
   }
 
-  void registarOnboardingList(String nombre,String mvp,int posi, BuildContext context) async{
+  void registarOnboardingList(String nombre,String mvp,String posi, BuildContext context) async{
     Lista mb = new Lista(name: nombre,mvp: mvp,posicion: posi);
 
     final docRef = db.collection("listas");
@@ -63,7 +63,7 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
               iPosicion,
               OutlinedButton(
                 onPressed: () {
-                  registarOnboardingList(iNombre.getText(),iMvp.getText(), int.parse(iPosicion.getText()),context);
+                  registarOnboardingList(iNombre.getText(),iMvp.getText(),iPosicion.getText(),context);
                   print("NOMBRE "+iNombre.getText()+"MVP "+iMvp.getText()+""+iPosicion.getText());
                 },
                 style: OutlinedButton.styleFrom(
