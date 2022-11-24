@@ -34,7 +34,7 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
   @override
   Widget build(BuildContext context) {
 
-    inputTexts2 iNombre=inputTexts2(sTittle:"Nombre");
+    inputTexts2 iNombre=inputTexts2(sTittle:"Nombre del equipo");
     inputTexts2 iMvp=inputTexts2(sTittle:"Mejor jugador");
     inputTexts2 iPosicion=inputTexts2(sTittle:"Posicion que va a quedar en el mundial");
 
@@ -51,7 +51,7 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
           ),
           Icon(Icons.more_vert),
         ],
-        backgroundColor: Colors.purple,
+        backgroundColor: Colors.red,
       ),
       body: SingleChildScrollView(
         child: Container(

@@ -62,8 +62,22 @@ class _HomeState extends State<HomeView> {
           ),
           Icon(Icons.more_vert),
         ],
-        backgroundColor: Colors.purple,
+        backgroundColor: Color.fromRGBO(112, 0, 0, 20),
+
+      ),  bottomNavigationBar: BottomAppBar(
+      color: Color.fromRGBO(112, 0, 0, 20),
+      child: Row(
+        children: [
+          IconButton(
+              icon: Icon(
+                Icons.menu,
+                size: 0,
+              ),
+              onPressed: () {}),
+          Spacer(),
+        ],
       ),
+    ),
       body: Container(
         child: ListView.separated(
           padding: const EdgeInsets.all(8),
@@ -85,8 +99,9 @@ class _HomeState extends State<HomeView> {
         },
         label: const Text('Añadir nueva equipo'),
         icon: const Icon(Icons.add),
-        backgroundColor: Colors.purple,
+        backgroundColor: Color.fromRGBO(112, 0, 0, 20),
       ),
+      backgroundColor: Colors.yellow,
     );
   }
 }
