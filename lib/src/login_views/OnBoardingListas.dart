@@ -22,8 +22,8 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
 
   }
 
-  void registarOnboardingList(String nombre,String mvp,String posi, BuildContext context) async{
-    Lista mb = new Lista(name: nombre,mvp: mvp,posicion: posi);
+  void registarOnboardingList(String nombre,int edad,String posi, BuildContext context) async{
+    Lista mb = new Lista(name: nombre,edad: edad,posicion: posi);
 
     final docRef = db.collection("listas");
     await docRef.add(mb.toFirestore());
@@ -34,9 +34,9 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
   @override
   Widget build(BuildContext context) {
 
-    inputTexts2 iNombre=inputTexts2(sTittle:"Nombre del equipo");
-    inputTexts2 iMvp=inputTexts2(sTittle:"Mejor jugador");
-    inputTexts2 iPosicion=inputTexts2(sTittle:"Posicion que va a quedar en el mundial");
+    inputTexts2 iNombre=inputTexts2(sTittle:"Nombre");
+    inputTexts2 iEdad=inputTexts2(sTittle:"Edad");
+    inputTexts2 iPosicion=inputTexts2(sTittle:"Posicion");
 
     // TODO: implement build
     return Scaffold(
@@ -59,12 +59,12 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               iNombre,
-              iMvp,
+              iEdad,
               iPosicion,
               OutlinedButton(
                 onPressed: () {
-                  registarOnboardingList(iNombre.getText(),iMvp.getText(),iPosicion.getText(),context);
-                  print("NOMBRE "+iNombre.getText()+"MVP "+iMvp.getText()+""+iPosicion.getText());
+                  registarOnboardingList(iNombre.getText(),int.parse(iEdad.getText()),iPosicion.getText(),context);
+                  print("NOMBRE "+iNombre.getText()+"MVP "+iEdad.getText()+""+iPosicion.getText());
                 },
                 style: OutlinedButton.styleFrom(
                     backgroundColor: Color.fromRGBO(210, 210, 210, 20)),

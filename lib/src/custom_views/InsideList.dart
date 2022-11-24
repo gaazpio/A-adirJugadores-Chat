@@ -56,7 +56,7 @@ class _InsideList extends State<InsideList> {
                 child: Container(
                   width: 360,
                   height: 50,
-                  child: Text("EDAD :\n"+DataHolder().whatList.mvp!,style: TextStyle(color: Colors.white,fontSize: 20)),
+                  child: Text("EDAD :\n"+DataHolder().whatList.edad.toString(),style: TextStyle(color: Colors.white,fontSize: 20)),
 
                   color: Colors.black,
                 ),
