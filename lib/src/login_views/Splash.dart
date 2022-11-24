@@ -21,10 +21,6 @@ class _SplasState extends State<Splash>{
     super.initState();
     moveUser();
   }
-
-
-
-
   void moveUser()async{
     await Future.delayed(Duration(seconds:3));
 
