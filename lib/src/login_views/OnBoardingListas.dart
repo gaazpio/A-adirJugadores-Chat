@@ -42,7 +42,7 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
     return Scaffold(
       appBar: AppBar(
         leading: Icon(Icons.menu),
-        title: Text('OnBoarding'),
+        title: Text('Nuevo jugador'),
         actions: [
           Icon(Icons.favorite),
           Padding(
@@ -51,7 +51,7 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
           ),
           Icon(Icons.more_vert),
         ],
-        backgroundColor: Colors.red,
+        backgroundColor: Color.fromRGBO(112, 0, 0, 20),
       ),
       body: SingleChildScrollView(
         child: Container(

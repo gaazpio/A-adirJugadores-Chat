@@ -47,7 +47,7 @@ class _InsideList extends State<InsideList> {
                   width: 360,
                   height: 50,
                   child: Text("NOMBRE DEL JUGADOR : \n"+ DataHolder().whatList.name!,style: TextStyle(color: Colors.white,fontSize: 20)),
-                  color: Colors.black,
+                  color: Color.fromRGBO(112, 0, 0, 20),
                 ),
               ),
 
@@ -58,7 +58,7 @@ class _InsideList extends State<InsideList> {
                   height: 50,
                   child: Text("EDAD :\n"+DataHolder().whatList.edad.toString(),style: TextStyle(color: Colors.white,fontSize: 20)),
 
-                  color: Colors.black,
+                  color: Colors.yellow
                 ),
               ),
 
@@ -68,7 +68,7 @@ class _InsideList extends State<InsideList> {
                   width: 360,
                   height: 50,
                   child: Text("POSICION:\n"+DataHolder().whatList.posicion!,style: TextStyle(color: Colors.white,fontSize: 20)),
-                  color: Colors.black,
+                  color: Color.fromRGBO(112, 0, 0, 20),
                 ),
               ),
 
