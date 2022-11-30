@@ -3,6 +3,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+// CLASE SPLASH ESTA CLASE DEPENDIENDO DE SI ESTAS O NO LOGEADO O SI TIENES UN PERFIL, si estas
+// logeado y tienes perfil te lleva directamente al HOME, si estas logeado y no tienes el perfil creado te lleva al onboarding
+// y si no estas logeado te lleva al login
+
+
 class Splash extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {

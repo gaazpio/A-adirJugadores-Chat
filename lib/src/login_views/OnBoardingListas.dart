@@ -4,6 +4,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../custom_views/InputTexts.dart';
 
+
+// ONBOARDING AÑADE UNA NUEVA LISTA CON EL PERFIL QUE TU HAYAS CREADO,
+// CON registarOnboardingList vas añadiendo a la firebase poniendo su nombre
+// edad y posicion
+
+
+
 class OnBoardingListas extends StatefulWidget {
   const OnBoardingListas({Key? key}) : super(key: key);
 
