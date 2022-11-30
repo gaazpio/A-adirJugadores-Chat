@@ -6,6 +6,9 @@ import '../Perfil/Lista.dart';
 import 'Button.dart';
 
 
+//CLASS MUESTRA LA INFORMACION DE DENTRO DE LAS LISTAS EN ESTE CASO MUESTRA LA INFORMACION QUE VA CREANDO
+// EL ONBOARDINGLISTAS
+
 class InsideList extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {

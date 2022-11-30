@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+
+// CLASE BUTTON TIENE DE FONDO UNA IMAGEN
+
 class button1 extends StatelessWidget{
   @override
   Widget build(BuildContext context) {

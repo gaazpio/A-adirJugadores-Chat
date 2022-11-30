@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import '../Perfil/Perfiles.dart';
 import '../custom_views/InputTexts.dart';
 
+
+// EL ONBOARDING SIRVE PARA CREAR EL PERFIL AL USUARIO LOGEADO
+
+
 class OnBoarding extends StatefulWidget {
   const OnBoarding({Key? key}) : super(key: key);
 

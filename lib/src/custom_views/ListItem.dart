@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+
+//CLASS LISITEM LA CLASE QUE SE MUESTRA EN EL HOME
+
 class ListItem extends StatelessWidget{
   final String stittle;
   final int iIndex;

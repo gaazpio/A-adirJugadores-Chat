@@ -3,6 +3,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+
+//CLASE PARA LOS INPUT TEXTS HAY 2 CLASES UNA SIN IMANGEN Y OTRA CON EL ICONO EN FORMA DE LA IMAGEN DEL SPLASH
+
 class inputTexts extends StatelessWidget{
   final String sTittle;
   final TextEditingController myController= TextEditingController(text: "");
