@@ -3,10 +3,14 @@ import 'package:examen_david_gazpio/src/Perfil/Lista.dart';
 import 'package:examen_david_gazpio/src/custom_views/ListItem.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import '../DataHolder/DataHolder.dart';
 import '../Perfil/Perfiles.dart';
 import '../custom_views/Button.dart';
+
+//ESTA ES LA CLASE DONDE SE MUESTRA LAS LISTAS, llamas al LISTITEM y se muestra
+// luego hacemos 2 funciones para acceder a cada lista y otra para mostrarla
+
+
 
 class HomeView extends StatefulWidget {
 

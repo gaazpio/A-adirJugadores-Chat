@@ -73,6 +73,17 @@ class _OnBoardingListasView extends State<OnBoardingListas> {
                 ),
               ),
 
+              OutlinedButton(
+                onPressed: () {
+                  Navigator.of(context).popAndPushNamed("/home");
+                },
+                style: OutlinedButton.styleFrom(
+                    backgroundColor: Color.fromRGBO(210, 210, 210, 20)),
+                child: Text
+                  ("Volver al chat",style:TextStyle(fontSize: 14,color: Color.fromRGBO(135, 10, 1, 20),)
+                ),
+              ),
+
             ],
           ),
         ),

@@ -29,6 +29,9 @@ class Login extends StatelessWidget{
     inputTexts iUsuario=inputTexts(sTittle: "Usuario");
     inputTexts iPassword= inputTexts(sTittle: "Contraseña");
 
+      //TE PONGO 2 USUARIOS PARA QUE TE PUEDAS LOGEAR
+        // a@a.com password 1234567890 este tiene el onboarding creado
+        // sinonboarding@onboarding.com password 1234567890 sin onboarding creado
 
     return Scaffold(
      appBar: AppBar(
